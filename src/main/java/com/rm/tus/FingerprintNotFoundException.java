@@ -1,4 +1,4 @@
-package com.rm.util.tus.java.client;
+package com.rm.tus;
 
 /**
  * This exception is thrown by {@link TusClient#resumeUpload(TusUpload)} if no upload URL

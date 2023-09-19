@@ -1,4 +1,4 @@
-package com.rm.util.tus.java.client;
+package com.rm.tus;
 
 /**
  * This exception is thrown when you try to resume an upload using

@@ -1,4 +1,4 @@
-package com.rm.util.tus.java.client;
+package com.rm.tus;
 
 import org.jetbrains.annotations.NotNull;
 
