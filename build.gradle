@@ -1,9 +1,10 @@
 /**
- * rdate 2023-09-07
- * create by white
+ * rdate 2023-09-11
+ * create by podonghee
+ * version 1.0.0
  *
- * MULTI-COMMON
- * UTIL MODULE
+ * RM-COMMON
+ * REST MODULE
  */
 buildscript {
     ext {
@@ -42,18 +43,18 @@ targetCompatibility = '1.8'
 
 
 dependencies {
-    implementation 'org.jetbrains:annotations:24.0.1'
-    implementation 'com.github.dev-mylo:rm-common-core:v1.1.1-release1'
     compileOnly 'org.projectlombok:lombok:1.18.20'
     annotationProcessor 'org.projectlombok:lombok:1.18.20'
     annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
 
     implementation group: 'org.bgee.log4jdbc-log4j2', name: 'log4jdbc-log4j2-jdbc4', version: '1.16'
 
-    api group: 'org.apache.poi', name: 'poi', version: '4.1.2'
-    api group: 'org.apache.poi', name: 'poi-ooxml', version: '4.1.2'
 
-
-
-
+    implementation 'com.github.dev-mylo:rm-common-core:v1.1.1-release1'
+    /*    implementation 'org.springframework.boot:spring-boot-starter'*/
+    api group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
+    // https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui
+    api group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
+    implementation "me.desair.tus:tus-java-server:1.0.0-2.0"
 }
+
