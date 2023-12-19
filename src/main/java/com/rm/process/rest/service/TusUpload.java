@@ -29,7 +29,9 @@ public class TusUpload {
     public ResponseEntity<Object> process(HttpServletRequest request, HttpServletResponse response, String filePath, String tusStoragePath, Long tusExpirationPeriod, String uploadUri) {
         try {
 
-            tusConfig.setTusConfig(tusStoragePath, tusExpirationPeriod, uploadUri);
+            if (null != tusStoragePath && tusStoragePath.equals("")) {
+                tusConfig.setTusConfig(tusStoragePath, tusExpirationPeriod, uploadUri);
+            }
 
             TusFileUploadService tusFileUploadService = tusConfig.tus();
 
