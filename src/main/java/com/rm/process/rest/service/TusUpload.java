@@ -1,6 +1,7 @@
 package com.rm.process.rest.service;
 
 import com.rm.common.core.exception.RmCommonException;
+import com.rm.process.rest.configuration.TusConfig;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import me.desair.tus.server.TusFileUploadService;
@@ -22,11 +23,16 @@ import java.io.InputStream;
 @Slf4j
 @RequiredArgsConstructor
 public class TusUpload {
-    private final TusFileUploadService tusFileUploadService;
+    TusConfig tusConfig = new TusConfig();
 
     // Process a tus upload request
-    public ResponseEntity<Object> process(HttpServletRequest request, HttpServletResponse response, String filePath) {
+    public ResponseEntity<Object> process(HttpServletRequest request, HttpServletResponse response, String filePath, String tusStoragePath, Long tusExpirationPeriod, String uploadUri) {
         try {
+
+            tusConfig.setTusConfig(tusStoragePath, tusExpirationPeriod, uploadUri);
+
+            TusFileUploadService tusFileUploadService = tusConfig.tus();
+
             // Process a tus upload request
             tusFileUploadService.process(request, response);
 

@@ -34,4 +34,10 @@ public class TusConfig {
                 .withUploadExpirationPeriod(tusExpirationPeriod)
                 .withUploadURI(uploadUri);
     }
+
+    public void setTusConfig(String tusStoragePath, Long tusExpirationPeriod, String uploadUri) {
+        this.tusStoragePath = tusStoragePath;
+        this.tusExpirationPeriod = tusExpirationPeriod;
+        this.uploadUri = uploadUri;
+    }
 }
