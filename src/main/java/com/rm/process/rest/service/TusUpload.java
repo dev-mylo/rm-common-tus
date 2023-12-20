@@ -29,7 +29,7 @@ public class TusUpload {
     public ResponseEntity<Object> process(HttpServletRequest request, HttpServletResponse response, String filePath, String tusStoragePath, Long tusExpirationPeriod, String uploadUri) {
         try {
 
-            if (null != tusStoragePath && tusStoragePath.equals("")) {
+            if (null != tusStoragePath && !tusStoragePath.equals("")) {
                 tusConfig.setTusConfig(tusStoragePath, tusExpirationPeriod, uploadUri);
             }
 
